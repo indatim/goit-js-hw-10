@@ -1,3 +1,9 @@
+// const refs = {
+//     countryList: document.querySelector('ul.country-list'),
+//     countryInfo: document.querySelector('div.country-info'),
+// };
+
+
 // export function createCountryList(countries) {
 //     const markup = countries
 //     .map(country => {

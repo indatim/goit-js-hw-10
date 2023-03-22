@@ -16,13 +16,13 @@ refs.searchBox.addEventListener('input', debounce(e => {
     if (enteredCountry == '') {
         refs.countryList.innerHTML = '';
         refs.countryInfo.innerHTML = '';
+        
     } else if (enteredCountry !== '') {
         fetchCountries(enteredCountry)
             .then(foundСountries => {
                 if (foundСountries.length > 10) {
                     Notify.info(
-                        `Too many matches found. Please enter a more specific name.`
-                    );
+                        `Too many matches found. Please enter a more specific name.`, {cssAnimationStyle: 'zoom'});
                 } else if (foundСountries.length > 2 && foundСountries.length <= 10) {
                     createCountryList(foundСountries);
 
@@ -32,8 +32,7 @@ refs.searchBox.addEventListener('input', debounce(e => {
                 }
 }).catch(error => {
                 Notify.failure(
-                    `Oops, there is no country with that name!`
-                );
+                  `Oops, there is no country with that name!`, { cssAnimationStyle: 'zoom' });
                 return error;
         })
     }
